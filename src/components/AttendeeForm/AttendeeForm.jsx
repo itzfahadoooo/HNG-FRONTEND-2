@@ -31,11 +31,15 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
 
   return (
     <div className="attendee-form">
-      <h2>
-        Attendee Details <span className="step">Step 2/3</span>
-      </h2>
-      <div className="progress-bar">
-        <div className="progress" style={{ width: "66%" }}></div>
+      <div className="header">
+        <div className="subheader">
+          <h2>
+            Attendee Details <span className="step">Step 2/3</span>
+          </h2>
+        </div>
+        <div className="progress-bar">
+          <span></span>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit}>
