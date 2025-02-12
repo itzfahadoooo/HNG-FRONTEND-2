@@ -265,6 +265,7 @@ gap: 8px;
 flex: 1 0 0;
 border-radius: var(--Radius-reg, 8px);
 border: 1px solid #24A0B5;
+background: none;
 }
 .cancel p{
     color: #24A0B5;
