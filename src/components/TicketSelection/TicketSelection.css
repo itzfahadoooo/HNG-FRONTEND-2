@@ -234,3 +234,61 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%; /* 24px */
 }
+.num-tickets{
+    color: white;
+    display: flex;
+    background: transparent;
+padding: var(--Radius-reg-2, 12px);
+align-items: center;
+gap: var(--Radius-reg, 8px);
+align-self: stretch;
+border-radius: var(--Radius-reg-2, 12px);
+border: 1px solid #07373F;
+}
+.num{
+    background-color: #12464E;
+}
+.actions{
+    display: flex;
+height: 48px;
+justify-content: flex-end;
+align-items: flex-end;
+gap: 24px;
+align-self: stretch;
+}
+.cancel{
+    display: flex;
+padding: var(--Radius-reg-2, 12px) var(--Radius-semi, 24px);
+justify-content: center;
+align-items: center;
+gap: 8px;
+flex: 1 0 0;
+border-radius: var(--Radius-reg, 8px);
+border: 1px solid #24A0B5;
+}
+.cancel p{
+    color: #24A0B5;
+font-family: JejuMyeongjo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+.next{
+    display: flex;
+padding: var(--Radius-reg-2, 12px) var(--Radius-semi, 24px);
+justify-content: center;
+align-items: center;
+gap: 8px;
+flex: 1 0 0;
+border-radius: var(--Radius-reg, 8px);
+background: #24A0B5;
+}
+.next{
+    color: #fff;
+font-family: JejuMyeongjo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}

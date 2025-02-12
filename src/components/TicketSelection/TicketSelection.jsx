@@ -67,9 +67,9 @@ const TicketSelection = () => {
 
         <div className="dropdown">
           <label className="ticket-no" htmlFor="num-tickets">Number of Tickets</label>
-          <select id="num-tickets">
+          <select className="num-tickets" id="num-tickets">
             {[...Array(10)].map((_, index) => (
-              <option key={index} value={index + 1}>
+              <option className="num" key={index} value={index + 1}>
                 {index + 1}
               </option>
             ))}
@@ -77,9 +77,9 @@ const TicketSelection = () => {
         </div>
 
         <div className="actions">
-          <button className="cancel">Cancel</button>
+          <button className="cancel"><p>Cancel</p></button>
           <button className="next" disabled={!selectedTicket}>
-            Next
+           <p>Next</p> 
           </button>
         </div>
       </div>
