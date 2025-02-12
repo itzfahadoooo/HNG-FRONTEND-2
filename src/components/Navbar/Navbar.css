@@ -1,0 +1,92 @@
+.navbar {
+  display: flex;
+  width: 1200px;
+  padding: 12px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px;
+  border: 1px solid #197686;
+  background: rgba(5, 37, 44, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.navitem1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navitem1 span {
+  display: flex;
+  padding: 6px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid #0e464f;
+  background: #052f35;
+}
+
+.logo1 {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1/1;
+}
+
+.logo2 {
+  width: 43.793px;
+  height: 22.624px;
+  fill: #0e464f;
+  stroke-width: 1px;
+  stroke: #fff;
+}
+
+.navitem2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navitem2 a {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.navitem2 p:first-child {
+  color: #fff;
+  font-family: JejuMyeongjo;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.navitem2 p {
+  color: #b3b3b3;
+
+  font-family: JejuMyeongjo;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.button{
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+button p{
+    color: #0A0C11;
+font-family: JejuMyeongjo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 125% */
+text-transform: uppercase;
+}
+
+button img{
+    width: 16px;
+    stroke-width: 1px;
+stroke: #0A0C11;
+}
