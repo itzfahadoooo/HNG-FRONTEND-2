@@ -1,7 +1,7 @@
 import "./PrintedTicket.css";
 import PropTypes from "prop-types";
-import ticket from "../../assets/bg.png"
-import pic from "../../assets/User.img.png"
+import ticket from "../../assets/bg.svg";
+import pic from "../../assets/User.img.png";
 
 const PrintedTicket = ({ prevStep }) => {
   return (
@@ -26,9 +26,10 @@ const PrintedTicket = ({ prevStep }) => {
         </div>
 
         <div className="cont2">
-                  <div className="cont21">
-                      <img src={ticket} className="ticket-img" alt="" />
-            {/* <div className="ticket-card">
+          <div className="cont21">
+            {/* <img src={ticket} className="ticket-img" alt="" /> */}
+
+            <div className="ticket-card">
               <h3>Techember Fest &apos;25</h3>
               <p>7 Olarewaju road, Ikeja, Lagos</p>
               <p>March 15, 2025 | 7:00 PM</p>
@@ -56,11 +57,11 @@ const PrintedTicket = ({ prevStep }) => {
                 </div>
               </div>
 
+            </div>
               <div className="barcode">
                 <div className="barcode-number">234567</div>
                 <div className="barcode-number">891026</div>
               </div>
-            </div> */}
           </div>
 
           <div className="ticket-buttons">
