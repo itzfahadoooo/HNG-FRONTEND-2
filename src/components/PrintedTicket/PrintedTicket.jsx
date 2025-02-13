@@ -1,5 +1,7 @@
 import "./PrintedTicket.css";
 import PropTypes from "prop-types";
+import ticket from "../../assets/bg.png"
+import pic from "../../assets/User.img.png"
 
 const PrintedTicket = ({ prevStep }) => {
   return (
@@ -23,45 +25,50 @@ const PrintedTicket = ({ prevStep }) => {
           </p>
         </div>
 
-        <div className="ticket-card">
-          <h3>Techember Fest &apos;25</h3>
-          <p>7 Olarewaju road, Ikeja, Lagos</p>
-          <p>March 15, 2025 | 7:00 PM</p>
+        <div className="cont2">
+                  <div className="cont21">
+                      <img src={ticket} className="ticket-img" alt="" />
+            {/* <div className="ticket-card">
+              <h3>Techember Fest &apos;25</h3>
+              <p>7 Olarewaju road, Ikeja, Lagos</p>
+              <p>March 15, 2025 | 7:00 PM</p>
 
-          <div className="ticket-image">
-            <img src="https://via.placeholder.com/150" alt="Profile" />
+              <div className="ticket-image">
+                <img src="https://via.placeholder.com/150" alt="Profile" />
+              </div>
+
+              <div className="ticket-info">
+                <div className="info-group">
+                  <span className="label">Name:</span>
+                  <span className="value">Avi Chukwu</span>
+                </div>
+                <div className="info-group">
+                  <span className="label">Email:</span>
+                  <span className="value">user@email.com</span>
+                </div>
+                <div className="info-group">
+                  <span className="label">Ticket Type:</span>
+                  <span className="value">VIP</span>
+                </div>
+                <div className="info-group">
+                  <span className="label">Special Request:</span>
+                  <span className="value">None</span>
+                </div>
+              </div>
+
+              <div className="barcode">
+                <div className="barcode-number">234567</div>
+                <div className="barcode-number">891026</div>
+              </div>
+            </div> */}
           </div>
 
-          <div className="ticket-info">
-            <div className="info-group">
-              <span className="label">Name:</span>
-              <span className="value">Avi Chukwu</span>
-            </div>
-            <div className="info-group">
-              <span className="label">Email:</span>
-              <span className="value">user@email.com</span>
-            </div>
-            <div className="info-group">
-              <span className="label">Ticket Type:</span>
-              <span className="value">VIP</span>
-            </div>
-            <div className="info-group">
-              <span className="label">Special Request:</span>
-              <span className="value">None</span>
-            </div>
+          <div className="ticket-buttons">
+            <button className="back-button" onClick={prevStep}>
+              Book Another Ticket
+            </button>
+            <button className="download-button">Download Ticket</button>
           </div>
-
-          <div className="barcode">
-            <div className="barcode-number">234567</div>
-            <div className="barcode-number">891026</div>
-          </div>
-        </div>
-
-        <div className="ticket-buttons">
-          <button className="back-button" onClick={prevStep}>
-            Book Another Ticket
-          </button>
-          <button className="download-button">Download Ticket</button>
         </div>
       </div>
     </div>
