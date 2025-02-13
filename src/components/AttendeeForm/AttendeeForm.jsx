@@ -91,18 +91,19 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
               required
             />
           </div>
-              </div>
-              
-              <div>
-                  <p></p>
-              </div>
+        </div>
 
-        <textarea
-          name="request"
-          placeholder="Special request?"
-          value={formData.request}
-          onChange={handleChange}
-        ></textarea>
+        <div className="special">
+          <p>Special request?</p>
+
+          <textarea
+            name="request"
+              placeholder="Textarea"
+
+            value={formData.request}
+            onChange={handleChange}
+          ></textarea>
+        </div>
 
         <div className="form-buttons">
           <button type="button" className="back-button" onClick={prevStep}>
