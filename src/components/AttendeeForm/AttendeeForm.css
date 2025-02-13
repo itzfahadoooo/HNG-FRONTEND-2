@@ -163,6 +163,7 @@
   border-radius: var(--Radius-reg-2, 12px);
   border: 1px solid #07373f;
   background: none;
+  background-color: transparent;
   color: #fff;
 }
 .email {

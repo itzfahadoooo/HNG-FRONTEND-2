@@ -51,7 +51,7 @@ const TicketSelection = ({ nextStep }) => {
             {tickets.map((ticket, index) => (
               <div
                 key={index}
-                className={`ticket-card ${
+                className={`ticket-card-1 ${
                   selectedTicket === ticket.access ? "selected" : ""
                 }`}
                 onClick={() => handleSelect(ticket.access)}

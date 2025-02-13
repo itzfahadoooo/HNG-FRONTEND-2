@@ -37,7 +37,7 @@ const PrintedTicket = ({ prevStep }) => {
                 </div>
               </div>
 
-              <div className="ticket-image">
+              <div className="ticket-image-1">
                 <img src="https://via.placeholder.com/150" alt="Profile" />
               </div>
 

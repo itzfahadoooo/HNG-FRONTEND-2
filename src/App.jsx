@@ -5,7 +5,7 @@ import TicketSelection from "./components/TicketSelection/TicketSelection";
 import PrintedTicket from "./components/PrintedTicket/PrintedTicket";
 
 const App = () => {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
