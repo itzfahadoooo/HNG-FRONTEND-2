@@ -109,7 +109,7 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
           <button type="button" className="back-button" onClick={prevStep}>
             <p>Back</p>
           </button>
-          <button type="submit" className="next-button">
+          <button type="submit" className="next-button" onClick={nextStep}>
             <p>Get My Free Ticket</p>
           </button>
         </div>

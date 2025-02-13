@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./TicketSelection.css";
-const TicketSelection = () => {
+
+const TicketSelection = ({ nextStep }) => {
   const [selectedTicket, setSelectedTicket] = useState(null);
 
   const tickets = [
@@ -66,7 +67,9 @@ const TicketSelection = () => {
         </div>
 
         <div className="dropdown">
-          <label className="ticket-no" htmlFor="num-tickets">Number of Tickets</label>
+          <label className="ticket-no" htmlFor="num-tickets">
+            Number of Tickets
+          </label>
           <select className="num-tickets" id="num-tickets">
             {[...Array(10)].map((_, index) => (
               <option className="num" key={index} value={index + 1}>
@@ -77,14 +80,27 @@ const TicketSelection = () => {
         </div>
 
         <div className="actions">
-          <button className="cancel"><p>Cancel</p></button>
-          <button className="next" disabled={!selectedTicket}>
-           <p>Next</p> 
+          <button className="cancel">
+            <p>Cancel</p>
+          </button>
+          <button
+            className="next"
+            onClick={nextStep}
+            disabled={!selectedTicket}
+          >
+            <p>Next</p>
           </button>
         </div>
       </div>
     </div>
   );
+};
+
+import PropTypes from "prop-types";
+
+TicketSelection.propTypes = {
+  prevStep: PropTypes.func.isRequired,
+  nextStep: PropTypes.func.isRequired,
 };
 
 export default TicketSelection;
