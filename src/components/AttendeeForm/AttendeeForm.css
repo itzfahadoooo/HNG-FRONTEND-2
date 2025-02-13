@@ -209,6 +209,9 @@
   background: none;
   border: none;
 }
+.email input::placeholder{
+    color: #fff;
+}
 
 .special {
   display: flex;
@@ -228,15 +231,69 @@
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
-.special textarea{
-    display: flex;
-height: 127px;
-padding: var(--Radius-reg-2, 12px);
-align-items: flex-start;
-gap: var(--Radius-reg, 8px);
-align-self: stretch;
-border-radius: var(--Radius-reg-2, 12px);
-border: 1px solid #07373F;
-background: none;
-color: white;
+.special textarea {
+  display: flex;
+  height: 127px;
+  padding: var(--Radius-reg-2, 12px);
+  align-items: flex-start;
+  gap: var(--Radius-reg, 8px);
+  align-self: stretch;
+  border-radius: var(--Radius-reg-2, 12px);
+  border: 1px solid #07373f;
+  background: none;
+  color: white;
+}
+.special textarea::placeholder{
+    color: var(--Color-Neutral-neutral-light, #AAA);
+    font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+
+}
+.form-buttons {
+  display: flex;
+  height: 48px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 24px;
+  align-self: stretch;
+}
+.back-button {
+  display: flex;
+  padding: var(--Radius-reg-2, 12px) var(--Radius-semi, 24px);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: var(--Radius-reg, 8px);
+  border: 1px solid #24a0b5;
+  background: none;
+}
+.back-button p {
+  color: #24a0b5;
+  font-family: JejuMyeongjo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.next-button {
+  display: flex;
+  padding: var(--Radius-reg-2, 12px) var(--Radius-semi, 24px);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: var(--Radius-reg, 8px);
+  background: #24a0b5;
+}
+.next-button p {
+  color: #fff;
+  font-family: JejuMyeongjo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
 }

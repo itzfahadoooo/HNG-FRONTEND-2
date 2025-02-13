@@ -12,7 +12,7 @@ const App = () => {
     <div>
       <div className="container">
         <Navbar />
-        {/* <TicketSelection nextStep={nextStep}/> */}
+        <TicketSelection nextStep={nextStep}/>
         <AttendeeForm nextStep={nextStep} prevStep={prevStep}/>
       </div>
     </div>

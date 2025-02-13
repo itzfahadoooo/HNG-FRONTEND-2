@@ -85,7 +85,7 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
             <input
               type="email"
               name="email"
-              placeholder="hello@avioflagos.io *"
+              placeholder="hello@avioflagos.io"
               value={formData.email}
               onChange={handleChange}
               required
@@ -99,7 +99,7 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
           <textarea
             name="request"
               placeholder="Textarea"
-
+            
             value={formData.request}
             onChange={handleChange}
           ></textarea>
@@ -107,10 +107,10 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
 
         <div className="form-buttons">
           <button type="button" className="back-button" onClick={prevStep}>
-            Back
+            <p>Back</p>
           </button>
           <button type="submit" className="next-button">
-            Get My Free Ticket
+            <p>Get My Free Ticket</p>
           </button>
         </div>
       </form>
