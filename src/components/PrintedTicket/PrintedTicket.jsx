@@ -1,7 +1,7 @@
 import "./PrintedTicket.css";
 import PropTypes from "prop-types";
 import ticket from "../../assets/bg.svg";
-import pic from "../../assets/User.img.png";
+import barcode from "../../assets/Bar Code.svg";
 
 const PrintedTicket = ({ prevStep }) => {
   return (
@@ -26,42 +26,52 @@ const PrintedTicket = ({ prevStep }) => {
         </div>
 
         <div className="cont2">
-          <div className="cont21">
-            {/* <img src={ticket} className="ticket-img" alt="" /> */}
-
-            <div className="ticket-card">
-              <h3>Techember Fest &apos;25</h3>
-              <p>7 Olarewaju road, Ikeja, Lagos</p>
-              <p>March 15, 2025 | 7:00 PM</p>
+          <img src={ticket} className="ticket-img" alt="" />
+          <div className="ticket-card">
+            <div className="cont3">
+              <div className="event-title">
+                <h3>Techember Fest ”25</h3>
+                <div className="address">
+                  <p>📍 04 Rumens road, Ikoyi, Lagos</p>
+                  <p>📅 March 15, 2025 | 7:00 PM</p>
+                </div>
+              </div>
 
               <div className="ticket-image">
                 <img src="https://via.placeholder.com/150" alt="Profile" />
               </div>
 
               <div className="ticket-info">
-                <div className="info-group">
-                  <span className="label">Name:</span>
-                  <span className="value">Avi Chukwu</span>
+                <div className="box">
+                  <div className="info-group">
+                    <span className="label">Enter your name</span>
+                    <span className="value">Avi Chukwu</span>
+                  </div>
+                  <div className="info-group2">
+                    <span className="label">Enter your email *</span>
+                    <span className="value">user@email.com</span>
+                  </div>
                 </div>
-                <div className="info-group">
-                  <span className="label">Email:</span>
-                  <span className="value">user@email.com</span>
-                </div>
-                <div className="info-group">
-                  <span className="label">Ticket Type:</span>
-                  <span className="value">VIP</span>
-                </div>
-                <div className="info-group">
-                  <span className="label">Special Request:</span>
-                  <span className="value">None</span>
-                </div>
-              </div>
 
-            </div>
-              <div className="barcode">
-                <div className="barcode-number">234567</div>
-                <div className="barcode-number">891026</div>
+                <div className="box">
+                  <div className="info-group">
+                    <span className="label">Ticket Type:</span>
+                    <span className="value">VIP</span>
+                  </div>
+                  <div className="info-group">
+                    <span className="label">Ticket For:</span>
+                    <span className="value">1</span>
+                  </div>
+                </div>
+                <span className="label">Special Request? </span>
+                <span className="value">
+                  Nil ? Or the users sad story they write in there gets{" "}
+                </span>
               </div>
+            </div>
+            <div className="barcode">
+              <img src={barcode} alt="" />
+            </div>
           </div>
 
           <div className="ticket-buttons">
