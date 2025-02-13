@@ -76,9 +76,9 @@ const PrintedTicket = ({ prevStep }) => {
 
           <div className="ticket-buttons">
             <button className="back-button" onClick={prevStep}>
-              Book Another Ticket
+              <p>Book Another Ticket</p>
             </button>
-            <button className="download-button">Download Ticket</button>
+            <button className="download-button"> <p>Download Ticket</p></button>
           </div>
         </div>
       </div>
