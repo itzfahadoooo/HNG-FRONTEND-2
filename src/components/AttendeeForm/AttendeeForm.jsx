@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./AttendeeForm.css";
+import cloud from "../../assets/cloud.svg";
+import envelope from "../../assets/envelope.svg";
 
 const AttendeeForm = ({ prevStep, nextStep }) => {
   const [formData, setFormData] = useState({
@@ -33,19 +35,23 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
     <div className="attendee-form">
       <div className="header">
         <div className="subheader">
-          <h2>
-            Attendee Details <span className="step">Step 2/3</span>
-          </h2>
+          <h2>Attendee Details</h2>
+          <span className="step">Step 2/3</span>
         </div>
-        <div className="progress-bar">
+        <div className="progress-bar2">
           <span></span>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="upload-section">
+          <p className="upload-profile">Upload Profile Photo</p>
+
           <label htmlFor="photoUpload" className="upload-label">
-            <div className="upload-box">Drag & drop or click to upload</div>
+            <div className="upload-box">
+              <img className="cloud" src={cloud} alt="" />
+              Drag & drop or click to upload
+            </div>
             <input
               type="file"
               id="photoUpload"
@@ -55,23 +61,41 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
           </label>
         </div>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        <div className="progress-bar">
+          <span></span>
+        </div>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email *"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+        <div className="name">
+          <p>Enter your name</p>
+          <input
+            type="text"
+            name="name"
+            // placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="email">
+          <p className="enteremail">Enter your email *</p>
+          <div>
+            <img src={envelope} alt="" />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="hello@avioflagos.io *"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+              </div>
+              
+              <div>
+                  <p></p>
+              </div>
 
         <textarea
           name="request"
