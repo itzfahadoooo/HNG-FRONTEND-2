@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ticket from "../../assets/bg.svg";
 import barcode from "../../assets/Bar Code.svg";
 
-const PrintedTicket = ({ prevStep }) => {
+const PrintedTicket = ({ onPrev }) => {
   return (
     <div className="ticket-ready">
       <div className="header">
@@ -75,7 +75,7 @@ const PrintedTicket = ({ prevStep }) => {
           </div>
 
           <div className="ticket-buttons">
-            <button className="back-button" onClick={prevStep}>
+            <button className="back-button" onClick={onPrev}>
               <p>Book Another Ticket</p>
             </button>
             <button className="download-button"> <p>Download Ticket</p></button>
@@ -87,7 +87,7 @@ const PrintedTicket = ({ prevStep }) => {
 };
 
 PrintedTicket.propTypes = {
-  prevStep: PropTypes.func,
+  onPrev: PropTypes.func,
 };
 
 export default PrintedTicket;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./TicketSelection.css";
 
-const TicketSelection = ({ nextStep }) => {
+const TicketSelection = ({ onNext }) => {
   const [selectedTicket, setSelectedTicket] = useState(null);
 
   const tickets = [
@@ -85,7 +85,7 @@ const TicketSelection = ({ nextStep }) => {
           </button>
           <button
             className="next"
-            onClick={nextStep}
+            onClick={onNext}
             disabled={!selectedTicket}
           >
             <p>Next</p>
@@ -100,7 +100,7 @@ import PropTypes from "prop-types";
 
 TicketSelection.propTypes = {
   prevStep: PropTypes.func.isRequired,
-  nextStep: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
 };
 
 export default TicketSelection;

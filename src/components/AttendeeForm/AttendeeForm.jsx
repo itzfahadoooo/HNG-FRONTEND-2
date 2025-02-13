@@ -3,7 +3,7 @@ import "./AttendeeForm.css";
 import cloud from "../../assets/cloud.svg";
 import envelope from "../../assets/envelope.svg";
 
-const AttendeeForm = ({ prevStep, nextStep }) => {
+const AttendeeForm = ({ onNext, onPrev }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,7 +28,7 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    nextStep();
+    onNext();
   };
 
   return (
@@ -106,10 +106,10 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
         </div>
 
         <div className="form-buttons">
-          <button type="button" className="back-button" onClick={prevStep}>
+          <button type="button" className="back-button" onClick={onPrev}>
             <p>Back</p>
           </button>
-          <button type="submit" className="next-button" onClick={nextStep}>
+          <button type="submit" className="next-button" onClick={onNext}>
             <p>Get My Free Ticket</p>
           </button>
         </div>
@@ -121,8 +121,8 @@ const AttendeeForm = ({ prevStep, nextStep }) => {
 import PropTypes from "prop-types";
 
 AttendeeForm.propTypes = {
-  prevStep: PropTypes.func.isRequired,
-  nextStep: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
 };
 
 export default AttendeeForm;
