@@ -2,6 +2,7 @@ import { useState } from "react";
 import AttendeeForm from "./components/AttendeeForm/AttendeeForm";
 import Navbar from "./components/Navbar/Navbar";
 import TicketSelection from "./components/TicketSelection/TicketSelection";
+import PrintedTicket from "./components/PrintedTicket/PrintedTicket";
 
 const App = () => {
   const [step, setStep] = useState(1);
@@ -13,7 +14,8 @@ const App = () => {
       <div className="container">
         <Navbar />
         <TicketSelection nextStep={nextStep}/>
-        <AttendeeForm nextStep={nextStep} prevStep={prevStep}/>
+        <AttendeeForm nextStep={nextStep} prevStep={prevStep} />
+        <PrintedTicket/>
       </div>
     </div>
   );
