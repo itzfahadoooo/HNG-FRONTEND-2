@@ -14,15 +14,17 @@ const Navbar = () => {
       </div>
 
       <div className="navitem2">
-        <p>
-          <Link to="/">Events</Link>
-        </p>
-        <p>
-          <Link to="/my-tickets">My Tickets</Link>
-        </p>
-        <p>
-          <Link to="/about">About Project</Link>
-        </p>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <p>Events</p>
+        </Link>
+
+        <Link to="/my-tickets">
+          <p>My Tickets</p>
+        </Link>
+
+        <Link to="/about">
+          <p>About Project</p>
+        </Link>
       </div>
 
       <div className="navitem3">

@@ -52,7 +52,7 @@ const AboutProjects = () => {
           <p>Design File</p>
         </button>
         <button className="aboutb2">
-          <p>Github Code</p>
+          <a href="https://github.com/itzfahadoooo/HNG-FRONTEND-2"><p>Github Code</p></a>
         </button>
       </div>
     </div>

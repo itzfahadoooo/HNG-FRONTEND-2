@@ -50,6 +50,7 @@ align-items: center;
 gap: 8px;
 border-radius: var(--Radius-reg, 8px);
 border: 1px solid #24A0B5;
+background: none;
 }
 .aboutb1 p{
     color: #24A0B5;
