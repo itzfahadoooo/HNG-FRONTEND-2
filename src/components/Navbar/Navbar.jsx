@@ -1,7 +1,8 @@
 import "./Navbar.css";
 import logo1 from "../../assets/hugeicons_ticket-01.svg";
 import logo2 from "../../assets/ticz.svg";
-import arrow from "../../assets/Line 5.svg"
+import arrow from "../../assets/Line 5.svg";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -14,18 +15,25 @@ const Navbar = () => {
 
       <div className="navitem2">
         <p>
-          <a>Events</a>
+          <Link to="/">Events</Link>
         </p>
         <p>
-          <a>My Tickets</a>
+          <Link to="/my-tickets">My Tickets</Link>
         </p>
         <p>
-          <a>About Project</a>
+          <Link to="/about">About Project</Link>
         </p>
       </div>
 
       <div className="navitem3">
-        <button className="button"><p>My Tickets</p><span><img src={arrow} alt="" /></span></button>
+        <Link to="/my-tickets">
+          <button className="button">
+            <p>My Tickets</p>
+            <span>
+              <img src={arrow} alt="" />
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );

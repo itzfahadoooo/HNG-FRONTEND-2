@@ -1,71 +1,25 @@
-import { useEffect, useState } from "react";
-import AttendeeForm from "./components/AttendeeForm/AttendeeForm";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import TicketSelection from "./components/TicketSelection/TicketSelection";
-import PrintedTicket from "./components/PrintedTicket/PrintedTicket";
+import MyTickets from "./pages/MyTickets";
+import AboutProject from "./pages/AboutProject";
+import Events from "./pages/Events";
 
 const App = () => {
-  const [step, setStep] = useState(1);
-  const [selectedTicket, setSelectedTicket] = useState(null);
-  const [numTickets, setNumTickets] = useState(1);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    request: "",
-    photoUrl: "",
-    ticketType: selectedTicket,
-              numTickets: numTickets,
-  });
-
-  useEffect(() => {
-    const savedStep = localStorage.getItem("currentStep");
-    if (savedStep) {
-      setStep(parseInt(savedStep));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("currentStep", step);
-  }, [step]);
-
-  const handleNextStep = () => {
-    setStep(step + 1);
-  };
-
-  const handlePrevStep = () => {
-    if (step > 1) {
-      setStep(step - 1);
-    }
-  };
-
   return (
-    <div>
+    <BrowserRouter>
       <div className="container">
         <Navbar />
-        {step === 1 && <TicketSelection onNext={handleNextStep}
-            selectedTicket={selectedTicket}
-            setSelectedTicket={setSelectedTicket}
-            numTickets={numTickets}
-            setNumTickets={setNumTickets} />}
-        {step === 2 && (
-          <AttendeeForm
-            onNext={handleNextStep}
-            onPrev={handlePrevStep}
-            formData={formData}
-            setFormData={setFormData}
-          />
-        )}
-        {step === 3 && (
-          <PrintedTicket
-            onPrev={handlePrevStep}
-            formData={formData}
-            numTickets={numTickets}
-            selectedTicket={selectedTicket}
-          />
-        )}
+        <Routes>
+          <Route path="/" element={<Events />} />
+          <Route path="/my-tickets" element={<MyTickets />} />
+          <Route path="/about" element={<AboutProject />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
