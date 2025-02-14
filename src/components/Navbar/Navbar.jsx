@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import logo1 from "../../assets/hugeicons_ticket-01.svg";
 import logo2 from "../../assets/ticz.svg";
-import arrow from "../../assets/Line 5.svg";
+import arrow from "../../assets/Line 5.png";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (

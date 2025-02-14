@@ -83,9 +83,16 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <img className="cloud" src={cloud} alt="" />
-              Drag & drop or click to upload
+              <div
+                className={`upload-overlay ${
+                  formData.photoUrl ? "hidden" : ""
+                }`}
+              >
+                <img className="cloud" src={cloud} alt="" />
+                <p>Drag & drop or click to upload</p>
+              </div>
             </div>
+
             <input
               type="file"
               id="photoUpload"

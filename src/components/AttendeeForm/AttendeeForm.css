@@ -115,6 +115,8 @@
   border-radius: 32px;
   border: 4px solid rgba(36, 160, 181, 0.5);
   background: #0e464f;
+  overflow: hidden;
+  position: relative;
 }
 .cloud {
   width: 32px;
@@ -122,17 +124,34 @@
   flex-shrink: 0;
   aspect-ratio: 1/1;
 }
-.upload-box {
-  /* align-self: stretch; */
-  color: var(--color-grey-98, #fafafa);
-  text-align: center;
+.upload-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  /* Text/Regular/Normal */
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url(<path-to-image>)no-repeat;
+  color: #fff;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.upload-box:hover .upload-overlay {
+  opacity: 1;
+}
+
+.hidden .upload-overlay {
+  opacity: 0;
 }
 
 .name {
@@ -210,8 +229,8 @@
   background: none;
   border: none;
 }
-.email input::placeholder{
-    color: #fff;
+.email input::placeholder {
+  color: #fff;
 }
 
 .special {
@@ -244,14 +263,13 @@
   background: none;
   color: white;
 }
-.special textarea::placeholder{
-    color: var(--Color-Neutral-neutral-light, #AAA);
-    font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 24px */
-
+.special textarea::placeholder {
+  color: var(--Color-Neutral-neutral-light, #aaa);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
 }
 .form-buttons {
   display: flex;

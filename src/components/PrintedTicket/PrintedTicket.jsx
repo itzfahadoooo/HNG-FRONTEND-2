@@ -27,7 +27,7 @@ const PrintedTicket = ({ onPrev, formData,numTickets,selectedTicket }) => {
           <h2>Ready</h2>
           <span className="step">Step 3/3</span>
         </div>
-        <div className="progress-bar">
+        <div className="progress-bar3">
           <span></span>
         </div>
       </div>
