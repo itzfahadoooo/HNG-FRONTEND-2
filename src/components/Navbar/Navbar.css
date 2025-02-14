@@ -10,15 +10,15 @@
   backdrop-filter: blur(2px);
 }
 
-button{
+button {
   display: flex;
-padding: 16px 24px;
-justify-content: center;
-align-items: center;
-gap: 8px;
-border-radius: 12px;
-border: 1px solid rgba(213, 234, 0, 0.10);
-background: #FFF;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(213, 234, 0, 0.1);
+  background: #fff;
 }
 
 .navitem1 {
@@ -81,42 +81,135 @@ background: #FFF;
   font-weight: 400;
   line-height: normal;
 }
-.button{
-    display: flex;
-justify-content: center;
-align-items: center;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-button p{
-    color: #0A0C11;
-font-family: JejuMyeongjo;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 125% */
-text-transform: uppercase;
-}
-
-button img{
-    width: 16px;
-    stroke-width: 1px;
-stroke: #0A0C11;
-}
-.button:hover{
-  display: inline-flex;
-padding: 16px 24px;
-justify-content: center;
-align-items: center;
-gap: 8px;
-border-radius: 12px;
-border: 1px solid #D9D9D9;
-background: #24A0B5;
-}
-button:hover p{
-  color: #D9D9D9;
+button p {
+  color: #0a0c11;
   font-family: JejuMyeongjo;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 125% */
   text-transform: uppercase;
+}
+
+button img {
+  width: 16px;
+  stroke-width: 1px;
+  stroke: #0a0c11;
+}
+.button:hover {
+  display: inline-flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  background: #24a0b5;
+}
+button:hover p {
+  color: #d9d9d9;
+  font-family: JejuMyeongjo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+  .navbar {
+      width: 100%;
+      max-width: 1000px;
+      padding: 12px;
+  }
+
+  .navitem2 {
+      gap: 12px;
+  }
+
+  .navitem2 p,
+  .navitem2 a {
+      font-size: 16px;
+  }
+
+  button {
+      padding: 12px 20px;
+  }
+
+  button p {
+      font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;  
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+      gap: 10px;
+  }
+
+  .navitem2 {
+      gap: 8px;
+  }
+
+  .navitem2 a {
+      justify-content: flex-start;
+      width: 100%;
+  }
+
+  button {
+      width: 100%;
+  }
+}
+
+/* For Mobile Screens (up to 480px) */
+@media screen and (max-width: 500px) {
+  .navbar {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 320px;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #197686;
+    background: rgba(5, 37, 44, 0.4);
+    backdrop-filter: blur(2px);
+  }
+
+  .navitem2 {
+    display: none;
+  }
+
+  .navitem2 a {
+      font-size: 14px;
+  }
+
+  button {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(213, 234, 0, 0.1);
+    background: #fff;
+  }
+
+  button img {
+      width: 14px;
+  }
 }

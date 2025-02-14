@@ -106,12 +106,12 @@ const TicketSelection = ({ onNext,
 import PropTypes from "prop-types";
 
 TicketSelection.propTypes = {
-  prevStep: PropTypes.func.isRequired,
+  prevStep: PropTypes.func,
   onNext: PropTypes.func.isRequired,
   selectedTicket: PropTypes.string.isRequired,
-  setSelectedTicket: PropTypes.string.isRequired,
-  numTickets: PropTypes.string.isRequired,
-  setNumTickets: PropTypes.string.isRequired,
+  setSelectedTicket: PropTypes.func.isRequired,
+  numTickets: PropTypes.number.isRequired,
+  setNumTickets: PropTypes.func.isRequired,
 };
 
 export default TicketSelection;

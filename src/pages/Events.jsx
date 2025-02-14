@@ -49,10 +49,10 @@ const Events = () => {
   };
 
   const goToTicketSelection = () => {
-    setStep(1); // Set this to the step number for Ticket Selection
+    setStep(1); 
   };
 
-  // Save data to localStorage when they change
+
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);

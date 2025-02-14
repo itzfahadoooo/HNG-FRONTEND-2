@@ -10,8 +10,8 @@ const PrintedTicket = ({ onPrev, formData,numTickets,selectedTicket }) => {
     const ticketElement = document.querySelector(".cont2");
     html2canvas(ticketElement, {
       useCORS: true, 
-      backgroundColor: null, // Preserve transparent background
-      scale: 2 // Higher resolution image
+      backgroundColor: null, 
+      scale: 2 
     }).then((canvas) => {
       const link = document.createElement("a");
       link.href = canvas.toDataURL("image/png");

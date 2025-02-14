@@ -51,7 +51,7 @@ const Events = () => {
   };
 
   const goToTicketSelection = () => {
-    setStep(1); // Set this to the step number for Ticket Selection
+    setStep(1); 
   };
   return (
     <div>
