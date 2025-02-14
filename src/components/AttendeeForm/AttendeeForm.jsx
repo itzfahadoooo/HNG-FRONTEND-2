@@ -1,15 +1,14 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+
+import axios from "axios";
 import "./AttendeeForm.css";
 import cloud from "../../assets/cloud.svg";
 import envelope from "../../assets/envelope.svg";
 
-const AttendeeForm = ({ onNext, onPrev }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    request: "",
-    photo: null,
-  });
+const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,15 +18,40 @@ const AttendeeForm = ({ onNext, onPrev }) => {
     });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({
-      ...formData,
-      photo: e.target.files[0],
-    });
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError("");
+
+    const formDataImage = new FormData();
+    formDataImage.append("file", file);
+    formDataImage.append("upload_preset", "ticket_generator");
+
+    try {
+      const res = await axios.post(
+        "https://api.cloudinary.com/v1_1/dgjnp8gr0/image/upload",
+        formDataImage
+      );
+      setFormData({
+        ...formData,
+        photoUrl: res.data.secure_url,
+      });
+      setUploading(false);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to upload image. Please try again.");
+      setUploading(false);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.photoUrl) {
+      setError("Please upload a profile photo.");
+      return;
+    }
     onNext();
   };
 
@@ -59,6 +83,8 @@ const AttendeeForm = ({ onNext, onPrev }) => {
               style={{ display: "none" }}
             />
           </label>
+          {uploading && <p>Uploading...</p>}
+        {error && <p className="error">{error}</p>}
         </div>
 
         <div className="progress-bar">
@@ -118,11 +144,12 @@ const AttendeeForm = ({ onNext, onPrev }) => {
   );
 };
 
-import PropTypes from "prop-types";
 
 AttendeeForm.propTypes = {
   onPrev: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };
 
 export default AttendeeForm;

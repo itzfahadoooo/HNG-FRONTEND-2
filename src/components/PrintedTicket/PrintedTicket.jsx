@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ticket from "../../assets/bg.svg";
 import barcode from "../../assets/Bar Code.svg";
 
-const PrintedTicket = ({ onPrev }) => {
+const PrintedTicket = ({ onPrev,formData  }) => {
   return (
     <div className="ticket-ready">
       <div className="header">
@@ -37,35 +37,33 @@ const PrintedTicket = ({ onPrev }) => {
                 </div>
               </div>
 
-              <div className="ticket-image-1">
-                <img src="https://via.placeholder.com/150" alt="Profile" />
-              </div>
+                <img className="ticket-image-2" src={formData.photoUrl || "https://via.placeholder.com/150"} alt="Profile" />
 
               <div className="ticket-info">
                 <div className="box">
                   <div className="info-group">
                     <span className="label">Enter your name</span>
-                    <span className="value">Avi Chukwu</span>
+                    <span className="value">{formData.name}</span>
                   </div>
                   <div className="info-group2">
                     <span className="label">Enter your email *</span>
-                    <span className="value">user@email.com</span>
+                    <span className="value-email">{formData.email}</span>
                   </div>
                 </div>
 
                 <div className="box">
                   <div className="info-group">
                     <span className="label">Ticket Type:</span>
-                    <span className="value">VIP</span>
+                    <span className="value2">VIP</span>
                   </div>
                   <div className="info-group">
                     <span className="label">Ticket For:</span>
-                    <span className="value">1</span>
+                    <span className="value2">1</span>
                   </div>
                 </div>
                 <span className="label">Special Request? </span>
-                <span className="value">
-                  Nil ? Or the users sad story they write in there gets{" "}
+                <span className="value2">
+                {formData.request || "No special requests"}
                 </span>
               </div>
             </div>
@@ -88,6 +86,7 @@ const PrintedTicket = ({ onPrev }) => {
 
 PrintedTicket.propTypes = {
   onPrev: PropTypes.func,
+  formData: PropTypes.object.isRequired,
 };
 
 export default PrintedTicket;

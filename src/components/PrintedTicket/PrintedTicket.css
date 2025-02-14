@@ -63,7 +63,7 @@
   gap: 24px;
   align-self: stretch;
 }
-.ticket-image-1 {
+.ticket-image-2 {
   width: 140px;
   height: 140px;
   border-radius: 12px;
@@ -127,7 +127,7 @@
   font-weight: 400;
   line-height: 150%;
 }
-.ticket-image img {
+.ticket-image-2 {
   width: 140px;
   height: 140px;
   border-radius: 12px;
@@ -152,11 +152,12 @@
 }
 .box {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: 1fr 1fr !important;  /* Make the second column wider */
   align-items: center;
   gap: 8px;
   align-self: stretch;
   border-bottom: 1px solid #12464e;
+
 }
 .info-group {
   display: flex;
@@ -168,6 +169,16 @@
   flex: 1 0 0;
   border-right: 1px solid #12464e;
 }
+.info-group2 {
+  display: flex;
+  padding: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
 .label {
   color: #fff;
   font-family: Roboto;
@@ -176,6 +187,7 @@
   font-weight: 400;
   line-height: 150%;
   opacity: 0.33;
+  
 }
 .value {
   color: #fff;
@@ -184,7 +196,29 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
+  word-break: break-all;
+  overflow-wrap: break-word; 
 }
+.value2{
+  color: #FFF;
+font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+}
+
+.value-email {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 8px !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  word-break: break-all;
+  overflow-wrap: break-word; 
+}
+
 .barcode {
   position: absolute;
   top: 490px;
