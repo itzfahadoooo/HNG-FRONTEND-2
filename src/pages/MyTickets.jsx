@@ -27,6 +27,7 @@ const Events = () => {
         };
   });
   
+  
 
   useEffect(() => {
     const savedStep = localStorage.getItem("currentStep");
