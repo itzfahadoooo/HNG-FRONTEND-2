@@ -72,7 +72,17 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
           <p className="upload-profile">Upload Profile Photo</p>
 
           <label htmlFor="photoUpload" className="upload-label">
-            <div className="upload-box">
+            <div
+              className="upload-box"
+              style={{
+                backgroundImage: formData.photoUrl
+                  ? `url(${formData.photoUrl}), url('/path/to/selected-icon.png')`
+                  : "none",
+                backgroundSize: formData.photoUrl ? "cover, 40px" : "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
               <img className="cloud" src={cloud} alt="" />
               Drag & drop or click to upload
             </div>
@@ -84,7 +94,7 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
             />
           </label>
           {uploading && <p>Uploading...</p>}
-        {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error}</p>}
         </div>
 
         <div className="progress-bar">
@@ -124,8 +134,7 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
 
           <textarea
             name="request"
-              placeholder="Textarea"
-            
+            placeholder="Textarea"
             value={formData.request}
             onChange={handleChange}
           ></textarea>
@@ -143,7 +152,6 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
     </div>
   );
 };
-
 
 AttendeeForm.propTypes = {
   onPrev: PropTypes.func.isRequired,

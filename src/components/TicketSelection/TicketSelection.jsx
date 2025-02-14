@@ -1,8 +1,10 @@
-import { useState } from "react";
 import "./TicketSelection.css";
 
-const TicketSelection = ({ onNext }) => {
-  const [selectedTicket, setSelectedTicket] = useState(null);
+const TicketSelection = ({ onNext,
+  selectedTicket,
+  setSelectedTicket,
+  numTickets,
+  setNumTickets, }) => {
 
   const tickets = [
     { type: "Free", price: 0, access: "REGULAR ACCESS", available: "20/52" },
@@ -11,6 +13,9 @@ const TicketSelection = ({ onNext }) => {
   ];
   const handleSelect = (access) => {
     setSelectedTicket(access);
+  };
+  const handleNumTicketsChange = (e) => {
+    setNumTickets(e.target.value);
   };
 
   return (
@@ -70,7 +75,9 @@ const TicketSelection = ({ onNext }) => {
           <label className="ticket-no" htmlFor="num-tickets">
             Number of Tickets
           </label>
-          <select className="num-tickets" id="num-tickets">
+          <select className="num-tickets" id="num-tickets" 
+            value={numTickets}
+            onChange={handleNumTicketsChange}>
             {[...Array(10)].map((_, index) => (
               <option className="num" key={index} value={index + 1}>
                 {index + 1}
@@ -101,6 +108,10 @@ import PropTypes from "prop-types";
 TicketSelection.propTypes = {
   prevStep: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
+  selectedTicket: PropTypes.string.isRequired,
+  setSelectedTicket: PropTypes.string.isRequired,
+  numTickets: PropTypes.string.isRequired,
+  setNumTickets: PropTypes.string.isRequired,
 };
 
 export default TicketSelection;

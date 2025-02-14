@@ -6,11 +6,16 @@ import PrintedTicket from "./components/PrintedTicket/PrintedTicket";
 
 const App = () => {
   const [step, setStep] = useState(1);
+  const [selectedTicket, setSelectedTicket] = useState(null);
+  const [numTickets, setNumTickets] = useState(1);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     request: "",
     photoUrl: "",
+    ticketType: selectedTicket,
+              numTickets: numTickets,
   });
 
   useEffect(() => {
@@ -38,7 +43,11 @@ const App = () => {
     <div>
       <div className="container">
         <Navbar />
-        {step === 1 && <TicketSelection onNext={handleNextStep} />}
+        {step === 1 && <TicketSelection onNext={handleNextStep}
+            selectedTicket={selectedTicket}
+            setSelectedTicket={setSelectedTicket}
+            numTickets={numTickets}
+            setNumTickets={setNumTickets} />}
         {step === 2 && (
           <AttendeeForm
             onNext={handleNextStep}
@@ -51,6 +60,8 @@ const App = () => {
           <PrintedTicket
             onPrev={handlePrevStep}
             formData={formData}
+            numTickets={numTickets}
+            selectedTicket={selectedTicket}
           />
         )}
       </div>

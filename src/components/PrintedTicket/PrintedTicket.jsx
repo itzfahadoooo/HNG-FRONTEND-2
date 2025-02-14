@@ -5,7 +5,7 @@ import barcode from "../../assets/Bar Code.svg";
 
 import html2canvas from "html2canvas";
 
-const PrintedTicket = ({ onPrev, formData }) => {
+const PrintedTicket = ({ onPrev, formData,numTickets,selectedTicket }) => {
   const handleDownload = () => {
     const ticketElement = document.querySelector(".cont2");
     html2canvas(ticketElement, {
@@ -70,11 +70,11 @@ const PrintedTicket = ({ onPrev, formData }) => {
                 <div className="box">
                   <div className="info-group">
                     <span className="label">Ticket Type:</span>
-                    <span className="value2">VIP</span>
+                    <span className="value2">{selectedTicket}</span>
                   </div>
                   <div className="info-group">
                     <span className="label">Ticket For:</span>
-                    <span className="value2">1</span>
+                    <span className="value2">{numTickets}</span>
                   </div>
                 </div>
                 <span className="label">Special Request? </span>
@@ -103,6 +103,8 @@ const PrintedTicket = ({ onPrev, formData }) => {
 PrintedTicket.propTypes = {
   onPrev: PropTypes.func,
   formData: PropTypes.object.isRequired,
+  numTickets: PropTypes.object.isRequired, 
+  selectedTicket: PropTypes.object.isRequired,
 };
 
 export default PrintedTicket;
