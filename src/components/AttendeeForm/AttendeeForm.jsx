@@ -48,12 +48,21 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    if (!formData.email) {
+      setError("Please enter your email.");
+      return;
+    }
+  
     if (!formData.photoUrl) {
       setError("Please upload a profile photo.");
       return;
     }
+  
+    setError("");
     onNext();
   };
+  
 
   return (
     <div className="attendee-form">
@@ -70,6 +79,8 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
       <form className="form" onSubmit={handleSubmit}>
         <div className="upload-section">
           <p className="upload-profile">Upload Profile Photo</p>
+          {error && <p className="error">{error}</p>}
+
 
           <label htmlFor="photoUpload" className="upload-label">
             <div
@@ -151,7 +162,7 @@ const AttendeeForm = ({ onNext, onPrev, formData, setFormData }) => {
           <button type="button" className="back-button" onClick={onPrev}>
             <p>Back</p>
           </button>
-          <button type="submit" className="next-button" onClick={onNext}>
+          <button type="submit" className="next-button">
             <p>Get My Free Ticket</p>
           </button>
         </div>
