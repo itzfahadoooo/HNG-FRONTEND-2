@@ -3,7 +3,23 @@ import PropTypes from "prop-types";
 import ticket from "../../assets/bg.svg";
 import barcode from "../../assets/Bar Code.svg";
 
-const PrintedTicket = ({ onPrev,formData  }) => {
+import html2canvas from "html2canvas";
+
+const PrintedTicket = ({ onPrev, formData }) => {
+  const handleDownload = () => {
+    const ticketElement = document.querySelector(".cont2");
+    html2canvas(ticketElement, {
+      useCORS: true, 
+      backgroundColor: null, // Preserve transparent background
+      scale: 2 // Higher resolution image
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "ticket.png";
+      link.click();
+    });
+  };
+  
   return (
     <div className="ticket-ready">
       <div className="header">
@@ -72,13 +88,13 @@ const PrintedTicket = ({ onPrev,formData  }) => {
             </div>
           </div>
 
+        </div>
           <div className="ticket-buttons">
             <button className="back-button" onClick={onPrev}>
               <p>Book Another Ticket</p>
             </button>
-            <button className="download-button"> <p>Download Ticket</p></button>
+            <button className="download-button" onClick={handleDownload}> <p>Download Ticket</p></button>
           </div>
-        </div>
       </div>
     </div>
   );
