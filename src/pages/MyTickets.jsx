@@ -4,18 +4,29 @@ import TicketSelection from "../components/TicketSelection/TicketSelection";
 import PrintedTicket from "../components/PrintedTicket/PrintedTicket";
 
 const Events = () => {
-  const [step, setStep] = useState(1);
-  const [selectedTicket, setSelectedTicket] = useState(null);
-  const [numTickets, setNumTickets] = useState(1);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    request: "",
-    photoUrl: "",
-    ticketType: selectedTicket,
-    numTickets: numTickets,
+  const [step, setStep] = useState(3);
+  const [selectedTicket, setSelectedTicket] = useState(() => {
+    return localStorage.getItem("selectedTicket") || null;
   });
+  
+  const [numTickets, setNumTickets] = useState(() => {
+    return parseInt(localStorage.getItem("numTickets")) || 1;
+  });
+  
+  const [formData, setFormData] = useState(() => {
+    const savedFormData = localStorage.getItem("formData");
+    return savedFormData
+      ? JSON.parse(savedFormData)
+      : {
+          name: "",
+          email: "",
+          request: "",
+          photoUrl: "",
+          ticketType: selectedTicket,
+          numTickets: numTickets,
+        };
+  });
+  
 
   useEffect(() => {
     const savedStep = localStorage.getItem("currentStep");
